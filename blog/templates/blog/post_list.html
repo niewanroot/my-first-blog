@@ -7,15 +7,13 @@
 			<h1><a href=''>Nie Blog</a></h1>
 		</div>
 		
-		<div>
-			<p>published:31.05.2018,08:31</p>
-			<h2><a href="">蒋方舟:</a></h2>
-			<p>那些杀不死我们的痛苦，它们有时会让我们更加强大。就像令我们受益最多的人，往往并不是良师益友，而是那些曾经努力伤害我们但最终并未能如愿的人。</p>
-		</div>
-		<div>
-			<p>pulished:31.05.2018,08:34</p>
-			<h2><a href="">周国平《生命与永恒》:</a></h2>
-			<p>有时候，我们需要站到云雾上来俯视一下自己和自己周围的人们，这样对己对人都不会太苛求了。</p>
-		</div>
+		{% for post in posts%}
+			<div>
+				<p>published:{{post.published_date}}</p>
+				<h1><a href=''>{{post.title}}</a></h1>
+				<p>{{post.text|linebreaksbr}}</p>
+			{{post}}
+			</div>
+		{%endfor%}
 	</body>
 </html>
